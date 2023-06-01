@@ -37,6 +37,34 @@ for (int i = 0; i < sayilar.Length; i++)
 
 
 
+//Dizilerin boyutu(RANK) derece-rutbe
+
+//Düzenli diziler
+int[] sayilar = new int[100]; //derecesi 1 olan dizi
+int[,] matris = new int[10, 10]; //derecesi 2 olan dizi
+int[,,] kup = new int[10, 10, 10]; //derecesi 3 olan dizi...
+
+Console.WriteLine(sayilar.Rank);
+Console.WriteLine(matris.Rank);
+Console.WriteLine(kup.Rank);
+
+//Düzensiz Dizi
+//Jagged array
+//Dizlerin dizisi
+int[][] jagged = new int[3][];
+
+
+int[] numbers = {34,567,1,45,345,77,987 };
+//Array.Sort(numbers);
+Array.Reverse(numbers);
+Console.WriteLine("----------");
+foreach (int i in numbers)
+    Console.WriteLine(i);
+
+
+
+
+
 
 //Kullanıcı tarafından boyutu belirlenen, bir tamsayi dizinin tum elemanlarını kullanıcıdan alan kodu yazınız?
 
@@ -56,8 +84,6 @@ for(int i = 0;i < elemanSayisi; i++)
 
 
 
-
-
 //foreach dongusu...
 //Kolekisyonlar üzerinde çalışır...
 //sayac değişkenine gerek yok...
@@ -68,8 +94,6 @@ foreach (int sayi in sayilar)
     Console.WriteLine($"{sayi}");
     //sayi = 11;
 }
-
-
 
 
 
