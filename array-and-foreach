@@ -1,0 +1,26 @@
+//Kullanıcı tarafından boyutu belirlenen, bir tamsayi dizinin tum elemanlarını kullanıcıdan alan kodu yazınız?
+
+Console.WriteLine("Elaman sayisi ne olsun?");
+int elemanSayisi =int.Parse(Console.ReadLine());
+int[] sayilar =new int[elemanSayisi];
+
+for (int i = 0; i < sayilar.Length; i++)
+{
+    sayilar[i]=int.Parse(Console.ReadLine());
+}
+
+Console.WriteLine("Dizinin eleman sayisi=" + sayilar.Length);
+
+for(int i = 0;i < elemanSayisi; i++)
+    Console.WriteLine($"{i}. indisdeki deger ={sayilar[i]}");
+
+//foreach dongusu...
+//Kolekisyonlar üzerinde çalışır...
+//sayac değişkenine gerek yok...
+//dizinin boyutunu bilmek zorunda değiliz...
+//iterasyon değişkeni sadece okunabilirdir...
+foreach (int sayi in sayilar)
+{
+    Console.WriteLine($"{sayi}");
+    //sayi = 11;
+}
