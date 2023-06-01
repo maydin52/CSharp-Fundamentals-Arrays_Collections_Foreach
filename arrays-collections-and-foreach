@@ -1,3 +1,43 @@
+//Diziler:
+//RAM de aynı isimli alanda, aynı tip birden fazla deger tutmak için kullanılan veri yapılarıdır. Verilere indis'ler uzerinden ulaşılır...
+
+//Dizilerde ilk elemanın indisi 0 dir...
+//Son elemanın indisi= n-1
+
+string ad1, ad2, ad3;
+
+//ad1 = Console.ReadLine();
+//ad2 = Console.ReadLine();   
+//ad3= Console.ReadLine();
+
+//Console.WriteLine(ad1);
+//Console.WriteLine(ad2);
+//Console.WriteLine(ad3);
+
+
+//Dizi tanımlama
+string[] isimler = new string[10];
+int[] sayilar = new int[10];
+int[] puanlar = { 45, 56, 67, 66 };
+string[] sehirler = { "Istanbul", "Ankara" };
+
+//Dizi elemanına ulasma(atama,alma)
+sayilar[2] = 33;
+
+Console.WriteLine(sayilar[2]);
+
+//Run-Time da hata verir...
+//IndexOutOfRange Exception....
+//sayilar[10] = 11;
+
+for (int i = 0; i < sayilar.Length; i++)
+{
+    Console.WriteLine(sayilar[i]);
+}
+
+
+
+
 //Kullanıcı tarafından boyutu belirlenen, bir tamsayi dizinin tum elemanlarını kullanıcıdan alan kodu yazınız?
 
 Console.WriteLine("Elaman sayisi ne olsun?");
