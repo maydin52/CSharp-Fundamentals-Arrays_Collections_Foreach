@@ -14,6 +14,10 @@ Console.WriteLine("Dizinin eleman sayisi=" + sayilar.Length);
 for(int i = 0;i < elemanSayisi; i++)
     Console.WriteLine($"{i}. indisdeki deger ={sayilar[i]}");
 
+
+
+
+
 //foreach dongusu...
 //Kolekisyonlar üzerinde çalışır...
 //sayac değişkenine gerek yok...
@@ -24,3 +28,45 @@ foreach (int sayi in sayilar)
     Console.WriteLine($"{sayi}");
     //sayi = 11;
 }
+
+
+
+
+
+-----------------------
+
+//Donguler
+
+//for, while
+//once sart, sonra islem
+//do-while
+//once islem sonra sart
+//sarta kadar en az 1 kere çalışır...
+
+//foreach: en farklı olan dongu
+//Koleksiyonlar uzerinde calisir...
+//Readonly dir...
+
+//break:donguden çıkmak için kullanılır...
+//gordugu anda donguyu bitirir...
+
+do {
+    //
+    //
+    break;
+    Console.WriteLine("islem");
+
+}while(true);
+
+//break, continue kullanımı...
+
+for (int i = 0; i < 10; i++)
+{
+    if (i == 5 || i==6) continue;
+    Console.WriteLine(i);
+}
+
+//continue:sadece o adımı iptal eder...
+
+//goto: Moduler programlamaya uygun bir kullanım değildir...
+//Assembly
