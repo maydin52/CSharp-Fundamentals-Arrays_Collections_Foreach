@@ -1,0 +1,141 @@
+//Koleksiyonlar...
+//1.Düz Koleksiyonlar (ArrayList*, Stack, Queue, Hastable)
+//2.Jenerik Koleksiyonlar(List<>***,Stack<>,Queue, Dictionary<>)
+
+//Koleksiyon Nedir?
+//Dizi
+//Diziler olusturulurken dizinin eleman sayısı, veya elemanları onceden belirtilmelidir....
+//NSA:Dizilerin boyutlarını sonradan değiştirmek zordur....
+using System.Collections;
+
+int[] sayilar = new int[20];
+int[] numbers = { 45, 56, 56, 67, 678 };
+
+//sayilar[30] = 33;
+ArrayList liste = new ArrayList();
+
+for (int i = 0; i < 485; i++)
+    liste.Add(i);
+
+Console.WriteLine($"Kapasite={liste.Capacity} Adet={liste.Count}");
+
+ArrayList liste2 = new ArrayList();
+
+
+//Koleksiyonlarda kullanılan genel metodlar...
+liste2.Add("deneme");
+string[] sehirler = { "Istanbul", "Ankara", "Bursa" };
+ArrayList arrayList = new ArrayList();
+arrayList.Add(112);
+arrayList.Add(333);
+liste2.AddRange(sehirler);
+liste2.AddRange(arrayList);
+
+foreach (object item in liste2)
+    Console.WriteLine(item);
+
+Console.WriteLine(liste2[0]);
+Console.WriteLine("---------");
+//ArrayList içerisinde ilgili elemanı arar, bulursa true, bulamazsa false doner...
+Console.WriteLine(liste2.Contains("Istanbul"));
+Console.WriteLine(liste2.Contains("Zonguldak"));
+
+Console.WriteLine(liste2.IndexOf("deneme1"));
+liste2.Insert(0, "emened");
+liste2[1] = "naber?";
+
+//Bir liste içerisindeki istenilen, indiste bulunan elemanı listeden çıkarır...
+liste2.RemoveAt(1);
+
+//Indise gerek kalmadan istenilen nesneyi silebiliriz...
+liste2.Remove("Istanbul");
+foreach (object obj in liste2)
+    Console.WriteLine(obj);
+
+//Interfaceler konusunda tekrar konusulacak...
+//liste2.Sort();
+
+-------------------------------
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            //listBox1.Items.Add("Ordu");
+
+            //yoksda ekle
+            if (!listBox1.Items.Contains(txtSehir.Text))
+                listBox1.Items.Add(txtSehir.Text);
+        }
+      
+      
+ -------------------------------
+ 
+         private void button2_Click(object sender, EventArgs e)
+        {
+
+            //listBox1.Items.Add("Ordu");
+
+            //yoksda ekle
+            if (!listBox1.Items.Contains(txtSehir.Text))
+                listBox1.Items.Add(txtSehir.Text);
+        }
+ ----------------------------------------
+ 
+ using System.Collections;
+
+namespace WinFormsApp2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        //Soru : Min ve Max sayılarını kullanıcıdan alıp, rastgele min max arasında 15 tam sayi olusturup, bunları listbox'a ekleyen kodu yazınız?
+        private void btnOlustur_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 15; i++)
+            {
+
+                lstSayilar.Items.Add(new Random().Next(int.Parse(txtMin.Text), int.Parse(txtMax.Text)));
+
+            }
+        }
+
+        private void btnZar_Click(object sender, EventArgs e)
+        {
+            //Soru: Zar atıp çıkan sonuca gore zar'ı olusturunuz(zar sayıyıst kadar nokta(RadioButton) olusturunuz??)
+
+            flpZar.Controls.Clear();
+            int zar = new Random().Next(1, 7);
+            btnZar.Text = zar.ToString();
+            for (int i = 0; i < zar; i++)
+            {
+
+                flpZar.Controls.Add(new RadioButton());
+            }
+        }
+
+        ArrayList personeller = new ArrayList();
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            //Soru: Gerekli verileri kullanıcıdan alıp, Personel sınıfı uzerinden RAM de tutan kodu yazınız?
+
+            Personel personel = new Personel();
+            personel.PersonelID = int.Parse(txtID.Text);
+            personel.Ad = txtAd.Text;
+            personel.Soyad = txtSoyad.Text;
+
+            //listBox1.Items.Add(personel);
+            personeller.Add(personel);
+            listBox1.DataSource = personeller;
+            dataGridView1.DataSource = personeller;
+
+            //Soru: Kullanıcı tarafından birden fazla girilen urun bilgisin RAM de tutan, ekranda gosteren aynı zamanda ID ye veya Ada gore arama yaparak istenilen Urun bilgisinin olup olmadığını gosteren uygulamayı yazınız?(UrunID , Ad, Fiyat, Kategori) 
+            //ekstra: Kategori bilgileri combobox tan gelmeli...
+            
+        }
+    }
+}
+
