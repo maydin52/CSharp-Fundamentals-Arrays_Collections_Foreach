@@ -95,6 +95,14 @@ foreach (int sayi in sayilar)
     //sayi = 11;
 }
 
+Foreach kullanım yerleri;
+En farklı döngüdür.
+Koleksiyonlarda çalışır.
+IEnumearable interface ini uygulamış class lar üzerinde çalışır. Mülakat!!
+Sadece birer birer ilerler.
+iterasyon değişkeni sadece okunabilirdir. Ienumerator içinde sadece get var çünkü.
+
+
 
 
 -----------------------
