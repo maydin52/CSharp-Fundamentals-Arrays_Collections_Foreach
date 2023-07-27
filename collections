@@ -57,85 +57,38 @@ foreach (object obj in liste2)
 
 -------------------------------
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+// ekleme her zaman koleksiyonun sonuna yapılır
+ArrayList koleksiyon = new ArrayList();
+koleksiyon.Add("ali"); // string
+koleksiyon.Add(5); //int
+koleksiyon.Add(5.5); // double
+koleksiyon.Add('A'); // char
+koleksiyon.Add(true); // boolean
 
-            //listBox1.Items.Add("Ordu");
+int adet = koleksiyon.Count; // Count ile koleksiyon adetini alabiliriz
+// dizide Count yerine length kullanırız.
 
-            //yoksda ekle
-            if (!listBox1.Items.Contains(txtSehir.Text))
-                listBox1.Items.Add(txtSehir.Text);
-        }
-      
-      
- -------------------------------
- 
-         private void button2_Click(object sender, EventArgs e)
-        {
+koleksiyon.Remove("ali"); // ali değerini koleksiyondan sil
+koleksiyon.RemoveAt(2); // 2.index değerini sil
+koleksiyon.AddRange(new ArrayList() { "can","canan","hakan" });  // araylist içine araylist ekledik.
 
-            //listBox1.Items.Add("Ordu");
+koleksiyon.Clear(); // tüm listeyi temizledik. dizideki elemanlar silinemez ama koleksiyondaki elemanlar silinebiliyor.
+koleksiyon.Add("murat");
+koleksiyon.Insert(0, "kaan"); // 1. index değerine kaan ekle
 
-            //yoksda ekle
-            if (!listBox1.Items.Contains(txtSehir.Text))
-                listBox1.Items.Add(txtSehir.Text);
-        }
- ----------------------------------------
- 
- using System.Collections;
 
-namespace WinFormsApp2
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-        }
 
-        //Soru : Min ve Max sayılarını kullanıcıdan alıp, rastgele min max arasında 15 tam sayi olusturup, bunları listbox'a ekleyen kodu yazınız?
-        private void btnOlustur_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 15; i++)
-            {
+// var da sağ ktaraftaki değişkenin değeri neyse ona göre dinamik değişken tipini bulan bir veri tipi (bukalemun)
+var aliVarMi = koleksiyon.Contains("ali"); // içerisinde böyle bir değer var mı
+var indeksi = koleksiyon.IndexOf("kaan56"); // kaan verisinin index değeri => 0 // yoksa -1 döner
 
-                lstSayilar.Items.Add(new Random().Next(int.Parse(txtMin.Text), int.Parse(txtMax.Text)));
+var diziElemanDegeri = koleksiyon[2]; // indeksinden değer okuma 
 
-            }
-        }
+var arr = koleksiyon.ToArray(); // bu method ile array diziye çevrilebilir. koleksiyonlar diziye çevrilebilir miş.
 
-        private void btnZar_Click(object sender, EventArgs e)
-        {
-            //Soru: Zar atıp çıkan sonuca gore zar'ı olusturunuz(zar sayıyıst kadar nokta(RadioButton) olusturunuz??)
+koleksiyon.Sort(); // a-z 0-9 sıralar. koleksiyon sıralaması
+Array.Sort(arr); // dizi sıralaması
+koleksiyon.Reverse(); // koleksiyonu tersten sıralama
 
-            flpZar.Controls.Clear();
-            int zar = new Random().Next(1, 7);
-            btnZar.Text = zar.ToString();
-            for (int i = 0; i < zar; i++)
-            {
-
-                flpZar.Controls.Add(new RadioButton());
-            }
-        }
-
-        ArrayList personeller = new ArrayList();
-        private void btnEkle_Click(object sender, EventArgs e)
-        {
-            //Soru: Gerekli verileri kullanıcıdan alıp, Personel sınıfı uzerinden RAM de tutan kodu yazınız?
-
-            Personel personel = new Personel();
-            personel.PersonelID = int.Parse(txtID.Text);
-            personel.Ad = txtAd.Text;
-            personel.Soyad = txtSoyad.Text;
-
-            //listBox1.Items.Add(personel);
-            personeller.Add(personel);
-            listBox1.DataSource = personeller;
-            dataGridView1.DataSource = personeller;
-
-            //Soru: Kullanıcı tarafından birden fazla girilen urun bilgisin RAM de tutan, ekranda gosteren aynı zamanda ID ye veya Ada gore arama yaparak istenilen Urun bilgisinin olup olmadığını gosteren uygulamayı yazınız?(UrunID , Ad, Fiyat, Kategori) 
-            //ekstra: Kategori bilgileri combobox tan gelmeli...
-            
-        }
-    }
-}
+Console.ReadKey();
 
