@@ -95,6 +95,8 @@ foreach (int sayi in sayilar)
     //sayi = 11;
 }
 
+DİKKAT!!! Foreach ; Ienumerable interface ini uygulamış olan metotlarda çalışır.
+
 Foreach kullanım yerleri;
 En farklı döngüdür.
 Koleksiyonlarda çalışır.
